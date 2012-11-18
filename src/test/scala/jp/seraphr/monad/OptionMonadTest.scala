@@ -1,13 +1,15 @@
 package jp.seraphr.monad
 
 import org.scalatest.FunSuite
-import jp.seraphr.monad.Monad._
-import jp.seraphr.monad.MyOption._
 
 /**
  *
  */
 class OptionMonadTest extends FunSuite with TestUtil {
+
+  import jp.seraphr.monad.Monad._
+  import jp.seraphr.monad.MyOption._
+
   test("unit returns Some") {
     assert(unit(11) === Some(11))
   }
