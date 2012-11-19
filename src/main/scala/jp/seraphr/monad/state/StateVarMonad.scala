@@ -14,7 +14,7 @@ class StateVar[_V] {
    *
    * @return
    */
-  implicit def StateVarMonad: Monad[_StateVar] = new StateMonad[Var[_V]]
+  implicit val StateVarMonad: Monad[_StateVar] = new StateMonad[Var[_V]]
 
   def get: _StateVar[_V] = State[Var[_V], _V](v => (v.value, v))
 
