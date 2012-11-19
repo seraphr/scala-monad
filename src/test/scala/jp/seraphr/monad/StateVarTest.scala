@@ -40,7 +40,7 @@ class StateVarTest extends FunSuite with TestUtil {
     tAssert.run(Var(1))
   }
 
-  test("set and get can be use in for") {
+  test("set and get can be used in for") {
     object IntStateVar extends StateVar[Int]
     import IntStateVar._
 
