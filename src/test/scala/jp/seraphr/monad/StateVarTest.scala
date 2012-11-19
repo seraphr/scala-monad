@@ -16,7 +16,7 @@ class StateVarTest extends FunSuite with TestUtil {
 
     val tUnit = unit(100)
     typeIs[State[Var[Int], Int]](tUnit)
-    assert(tUnit.run(Var(1)) ===(100, Var(1)))
+    assert(tUnit.run(Var(1)) === (100, Var(1)))
   }
 
   test("setF set value") {
@@ -24,7 +24,7 @@ class StateVarTest extends FunSuite with TestUtil {
     import IntStateVar._
 
     val tSet100 = unit(0).bind(setF(100))
-    assert(tSet100.run(Var(1)) ===((), Var(100)))
+    assert(tSet100.run(Var(1)) === ((), Var(100)))
   }
 
   test("getF get value") {
@@ -51,7 +51,7 @@ class StateVarTest extends FunSuite with TestUtil {
       v2 <- get
     } yield v + v2
 
-    assert(tSetGet.run(Var(0)) ===(432, Var(111)))
+    assert(tSetGet.run(Var(0)) === (432, Var(111)))
   }
 
   test("new function add can be created") {
@@ -68,6 +68,6 @@ class StateVarTest extends FunSuite with TestUtil {
       v <- get
     } yield v
 
-    assert(tAdd20.run(Var(100)) ===(120, Var(120)))
+    assert(tAdd20.run(Var(100)) === (120, Var(120)))
   }
 }
